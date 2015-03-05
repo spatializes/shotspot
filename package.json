@@ -23,6 +23,9 @@
     "browserify": "~9.0.3",
     "vinyl-source-stream": "~1.0.0",
     "gulp-streamify": "0.0.5",
-    "watchify": "~2.4.0"
+    "watchify": "~2.4.0",
+    "vinyl-buffer": "~1.0.0",
+    "gulp-sourcemaps": "~1.5.0",
+    "gulp-util": "~3.0.4"
   }
 }
