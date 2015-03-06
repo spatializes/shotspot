@@ -1,8 +1,23 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"./public/components.jsx":[function(require,module,exports){
 var React = require('react');
 var $ = require('jquery');
-
-var data = [];
+var AnimalList = React.createClass({displayName: "AnimalList",
+    render: function() {
+        var animalNodes = this.props.data.map(function (animal) {
+            return (
+                React.createElement("div", null, 
+                    React.createElement("span", null, React.createElement("strong", null, "Name:"), " ", animal.name), "   ", 
+                    React.createElement("span", null, React.createElement("strong", null, "Location:"), " ", animal.location)
+                )
+            );
+        });
+        return (
+            React.createElement("div", {className: "animalList"}, 
+                animalNodes
+            )
+        );
+    }
+});
 
 var AnimalBox = React.createClass({displayName: "AnimalBox",
     getInitialState: function() {
@@ -13,7 +28,7 @@ var AnimalBox = React.createClass({displayName: "AnimalBox",
             url: this.props.url,
             dataType: 'json',
             success: function(data) {
-                this.setState({data: data});
+                this.setState({data: data.rows});
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -26,8 +41,8 @@ var AnimalBox = React.createClass({displayName: "AnimalBox",
     render: function() {
         return (
             React.createElement("div", {className: "animalBox"}, 
-                React.createElement("h1", null, "box"), 
-                React.createElement("div", null, this.state.data), 
+                React.createElement("h1", null, "Anims"), 
+                React.createElement(AnimalList, {data: this.state.data}), 
                 React.createElement("div", null, "foot")
             )
         );

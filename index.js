@@ -48,7 +48,7 @@ function getAnimals(request, reply) {
             return true;
         };
 
-        client.query('SELECT * FROM animals', function(err, result) {
+        client.query('SELECT name, location FROM animals', function(err, result) {
             if(handleError(err)) return;
             reply(result);
         });

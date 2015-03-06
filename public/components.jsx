@@ -1,7 +1,22 @@
 var React = require('react');
 var $ = require('jquery');
-
-var data = [];
+var AnimalList = React.createClass({
+    render: function() {
+        var animalNodes = this.props.data.map(function (animal) {
+            return (
+                <div>
+                    <span><strong>Name:</strong> {animal.name}</span>&nbsp;&nbsp;&nbsp;
+                    <span><strong>Location:</strong> {animal.location}</span>
+                </div>
+            );
+        });
+        return (
+            <div className="animalList">
+                {animalNodes}
+            </div>
+        );
+    }
+});
 
 var AnimalBox = React.createClass({
     getInitialState: function() {
@@ -12,7 +27,7 @@ var AnimalBox = React.createClass({
             url: this.props.url,
             dataType: 'json',
             success: function(data) {
-                this.setState({data: data});
+                this.setState({data: data.rows});
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
@@ -25,8 +40,8 @@ var AnimalBox = React.createClass({
     render: function() {
         return (
             <div className="animalBox">
-                <h1>box</h1>
-                <div>{this.state.data}</div>
+                <h1>Anims</h1>
+                <AnimalList data={this.state.data} />
                 <div>foot</div>
             </div>
         );
