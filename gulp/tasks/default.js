@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-gulp.task('default', ['browserify']);
+gulp.task('default', ['browserify', 'markup', 'less']);

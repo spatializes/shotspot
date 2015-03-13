@@ -30,3 +30,4 @@ node_modules
 # Extras
 public/bundle.js
 public/bundle.js.map
+build

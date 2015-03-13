@@ -7,9 +7,9 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
-var config = require('../config');
+var config = require('../config').browserify;
 
-var bundler = watchify(browserify('./public/components.jsx', watchify.args));
+var bundler = watchify(browserify('./src/components.jsx', watchify.args));
 bundler.transform(reactify);
 
 gulp.task('browserify', bundle); // run gulp browserify to build
