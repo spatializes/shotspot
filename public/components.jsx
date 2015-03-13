@@ -1,5 +1,9 @@
 var React = require('react');
 var $ = require('jquery');
+var mui = require('material-ui');
+
+var RaisedButton = mui.RaisedButton;
+
 var AnimalList = React.createClass({
     render: function() {
         var animalNodes = this.props.data.map(function (animal) {
@@ -13,6 +17,7 @@ var AnimalList = React.createClass({
         return (
             <div className="animalList">
                 {animalNodes}
+                <RaisedButton label="Default" />
             </div>
         );
     }
