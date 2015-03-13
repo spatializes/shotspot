@@ -26,3 +26,7 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# Extras
+public/bundle.js
+public/bundle.js.map

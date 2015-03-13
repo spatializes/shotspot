@@ -3,6 +3,7 @@ var $ = require('jquery');
 var mui = require('material-ui');
 
 var RaisedButton = mui.RaisedButton;
+var FlatButton = mui.FlatButton;
 
 var AnimalList = React.createClass({
     render: function() {
@@ -17,7 +18,6 @@ var AnimalList = React.createClass({
         return (
             <div className="animalList">
                 {animalNodes}
-                <RaisedButton label="Default" />
             </div>
         );
     }
@@ -48,6 +48,8 @@ var AnimalBox = React.createClass({
                 <h1>Anims</h1>
                 <AnimalList data={this.state.data} />
                 <div>foot</div>
+                <RaisedButton label="Default" />
+                <FlatButton label="Primary" primary={true} />
             </div>
         );
     }
