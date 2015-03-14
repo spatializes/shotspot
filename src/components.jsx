@@ -44,7 +44,7 @@ var AnimalBox = React.createClass({
     },
     render: function() {
         return (
-            <div className="animalBox">
+            <div className="shot-wrap">
                 <h1>Anims</h1>
                 <AnimalList data={this.state.data} />
                 <div>foot</div>

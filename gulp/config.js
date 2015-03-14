@@ -10,10 +10,6 @@ module.exports = {
     },
     less: {
         src: src + '/less/main.less',
-        watch: [
-            src + '/less/**',
-            mui + '/less/**'
-        ],
         dest: dest
     },
     markup: {
