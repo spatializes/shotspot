@@ -55,7 +55,4 @@ var AnimalBox = React.createClass({
     }
 });
 
-React.render(
-        <AnimalBox url="/animals" />,
-        document.getElementById('content')
-);
+module.exports = AnimalBox;

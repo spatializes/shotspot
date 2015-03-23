@@ -1,7 +1,7 @@
 // Create Hapi server with host and port
 var Hapi = require('hapi');
 var pg = require('pg');
-var conString = "postgres://postgres:postgres@localhost:5432/mydb";
+var conString = "postgres://postgresusr:postgresusrpassword@localhost:5432/mydb";
 
 var server = new Hapi.Server();
 server.connection({

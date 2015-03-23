@@ -9,7 +9,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
 var config = require('../config').browserify;
 
-var bundler = watchify(browserify('./src/components.jsx', watchify.args));
+
+//var bundler = watchify(browserify('./src/components.jsx', watchify.args));
+var bundler = watchify(browserify('./src/app.js', watchify.args));
 bundler.transform(reactify);
 
 gulp.task('browserify', bundle); // run gulp browserify to build
