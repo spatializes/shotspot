@@ -8,6 +8,8 @@ module.exports = {
     browserify: {
         dest: dest
     },
+    webpack: {
+    },
     less: {
         src: src + '/less/main.less',
         dest: dest

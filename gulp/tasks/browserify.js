@@ -27,3 +27,4 @@ function bundle() {
             .pipe(sourcemaps.write('./')) // writes .map file
         .pipe(gulp.dest(config.dest));
 }
+
