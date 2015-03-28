@@ -15,6 +15,7 @@
     "url": "https://github.com/drquinn/shotspot/issues"
   },
   "dependencies": {
+    "babel": "^4.7.16",
     "babel-core": "^4.7.16",
     "babel-loader": "^4.2.0",
     "browserify": "~9.0.3",

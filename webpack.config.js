@@ -32,8 +32,7 @@ var config = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        //loader: 'babel-loader'
-        loader: 'jsx-loader?insertPragma=React.DOM&harmony'
+        loader: 'babel-loader?experimental'
       }
     ]
   }
