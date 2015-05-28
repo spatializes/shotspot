@@ -58,9 +58,7 @@ db.serialize(function() {
       console.log(row.id + ": " + row.name + " : " + row.location);
     });
   }
-
 });
-
 
 // DB Functions
 function getAnimals(request, reply) {
