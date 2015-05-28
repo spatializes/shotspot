@@ -37,6 +37,7 @@
     "react": "~0.12.2",
     "reactify": "~1.0.0",
     "require-dir": "~0.1.0",
+    "sqlite3": "^3.0.8",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.0.0",
     "watchify": "~2.4.0",

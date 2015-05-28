@@ -32,7 +32,7 @@ var AnimalBox = React.createClass({
             url: this.props.url,
             dataType: 'json',
             success: function(data) {
-                this.setState({data: data.rows});
+              this.setState({data: data});
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error(this.props.url, status, err.toString());
