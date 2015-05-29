@@ -1,9 +1,9 @@
 import React from 'react';
-import AnimalBox from './AnimalBox.jsx';
-import Navbar from './Navbar.jsx';
+import AnimalBox from './AnimalBox';
+import Navbar from './Navbar';
 
-var ShotApp = React.createClass({
-  render: function() {
+class ShotApp extends React.Component {
+  render() {
     return (
       <div className="shot-app">
         <Navbar />
@@ -11,6 +11,6 @@ var ShotApp = React.createClass({
       </div>
     )
   }
-});
+}
 
 module.exports = ShotApp;

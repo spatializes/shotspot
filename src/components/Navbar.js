@@ -1,21 +1,22 @@
-'use strict';
+'use strict'
 
 import React from 'react';
 import mui from 'material-ui'
 
-var Toolbar = mui.Toolbar;
-var ToolbarGroup = mui.ToolbarGroup;
-var DropDownMenu = mui.DropDownMenu;
-var FontIcon = mui.FontIcon;
+const Toolbar = mui.Toolbar;
+const ToolbarGroup = mui.ToolbarGroup;
+const DropDownMenu = mui.DropDownMenu;
+const FontIcon = mui.FontIcon;
 
-var filterOptions = [
+const filterOptions = [
   { payload: '1', text: 'Deer' },
   { payload: '2', text: 'Moose' },
   { payload: '3', text: 'Cow' },
+  { payload: '4', text: 'Elephant' },
 ];
 
-var Navbar = React.createClass({
-  render: function() {
+class Navbar extends React.Component {
+  render() {
     return (
       <Toolbar>
         <ToolbarGroup key={0} float="left">
@@ -26,6 +27,6 @@ var Navbar = React.createClass({
       </Toolbar>
     );
   }
-});
+};
 
 module.exports = Navbar;

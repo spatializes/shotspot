@@ -1,12 +1,7 @@
-/** @jsx React.Dom */
+'use strict'
 
-import 'babel/polyfill';
-import React from 'react/addons';
-import ShotApp from './components/ShotApp.jsx';
-import $ from 'jquery';
-import mui from 'material-ui';
-
-//var initialState = JSON.parse(document.getElementById('initial-state').innerHTML);
+import React from 'react';
+import ShotApp from './components/ShotApp';
 
 let element = React.createElement(ShotApp);
 React.render(element, document.getElementById('react-app'));

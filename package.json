@@ -15,9 +15,9 @@
     "url": "https://github.com/drquinn/shotspot/issues"
   },
   "dependencies": {
-    "babel": "^4.7.16",
-    "babel-core": "^4.7.16",
-    "babel-loader": "^4.2.0",
+    "babel": "^5.0.0",
+    "babel-core": "^5.0.0",
+    "babel-loader": "^5.0.0",
     "browserify": "~9.0.3",
     "flux": "^2.0.3",
     "gulp": "~3.8.11",
@@ -37,7 +37,7 @@
     "minimist": "^1.1.1",
     "object-assign": "^2.0.0",
     "pg": "~4.3.0",
-    "react": "~0.12.2",
+    "react": "~0.13.3",
     "reactify": "~1.0.0",
     "require-dir": "~0.1.0",
     "sqlite3": "^3.0.8",
@@ -45,6 +45,6 @@
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.0.0",
     "watchify": "~2.4.0",
-    "webpack": "^1.7.3"
+    "webpack": "^1.5.3"
   }
 }
