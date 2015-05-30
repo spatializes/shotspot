@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React from 'react';
 import mui from 'material-ui';
@@ -7,7 +7,6 @@ import AnimalStore from '../stores/AnimalStore';
 import AnimalUtils from '../utils/AnimalAPIUtils';
 
 const RaisedButton = mui.RaisedButton;
-const FlatButton = mui.FlatButton;
 
 class AnimalList extends React.Component {
     render() {
@@ -25,16 +24,17 @@ class AnimalList extends React.Component {
             </div>
         );
     }
-};
+}
 
 class AnimalBox extends React.Component {
   constructor() {
     super();
     this.getAnimalDataIfNeeded = this.getAnimalDataIfNeeded.bind(this);
+    this.createAnimal = this.createAnimal.bind(this);
     this._onChange = this._onChange.bind(this);
     this.state = AnimalStore.getStateFromStores();
   }
-    
+
   componentDidMount() {
     AnimalStore.addChangeListener(this._onChange);
     this.getAnimalDataIfNeeded(this.props);
@@ -48,8 +48,22 @@ class AnimalBox extends React.Component {
     this.getAnimalDataIfNeeded(nextProps);
   }
 
-  getAnimalDataIfNeeded(props) {
-    AnimalUtils.getAll()
+  getAnimalDataIfNeeded() {
+    AnimalUtils.getAll();
+  }
+
+  createAnimal(evt) {
+    evt.preventDefault();
+    const text = {
+      name: React.findDOMNode(this.refs.aname).value.trim(),
+      location: React.findDOMNode(this.refs.location).value.trim()
+    };
+    if (!text) { return; }
+
+    AnimalUtils.createAnimal(text);
+
+    React.findDOMNode(this.refs.aname).value = '';
+    React.findDOMNode(this.refs.location).value = '';
   }
 
   _onChange() {
@@ -59,14 +73,18 @@ class AnimalBox extends React.Component {
   render() {
     return (
       <div className="shot-wrap">
-        <h1>Anims</h1>
+        <h1>Animals</h1>
         <AnimalList animals={this.state.animals} />
-        <div>foot</div>
-        <RaisedButton label="Default" />
-        <FlatButton label="Primary" primary={true} />
+        <br />
+        <form className="newAnimalForm" onSubmit={this.createAnimal}>
+          <input type="text" placeholder="Name" ref="aname" />
+          <input type="text" placeholder="Location" ref="location" />
+          <br /><br />
+          <RaisedButton label="New Animal" type="submit" value="Post" />
+        </form>
       </div>
     );
   }
-};
+}
 
 module.exports = AnimalBox;

@@ -1,18 +1,17 @@
-'use strict'
+'use strict';
 
 import React from 'react';
-import mui from 'material-ui'
+import mui from 'material-ui';
 
 const Toolbar = mui.Toolbar;
 const ToolbarGroup = mui.ToolbarGroup;
 const DropDownMenu = mui.DropDownMenu;
-const FontIcon = mui.FontIcon;
 
 const filterOptions = [
   { payload: '1', text: 'Deer' },
   { payload: '2', text: 'Moose' },
   { payload: '3', text: 'Cow' },
-  { payload: '4', text: 'Elephant' },
+  { payload: '4', text: 'Elephant' }
 ];
 
 class Navbar extends React.Component {
@@ -27,6 +26,6 @@ class Navbar extends React.Component {
       </Toolbar>
     );
   }
-};
+}
 
 module.exports = Navbar;

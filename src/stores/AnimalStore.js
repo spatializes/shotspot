@@ -1,3 +1,4 @@
+'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
@@ -49,6 +50,15 @@ AnimalStore.appDispatch = AppDispatcher.register(function(action) {
     case ActionTypes.RECEIVE_RAW_MESSAGES:
       _persistAnimalData(action.rawAnimals);
       break;
+    case ActionTypes.CREATE_ANIMAL:
+      console.log(action);
+      const newAnimal = {
+        name: action.text.name,
+        location: action.text.location
+      };
+      console.log(newAnimal);
+      _state.animals.push(newAnimal);
+      break;
     default:
       return true;
   }
@@ -56,6 +66,5 @@ AnimalStore.appDispatch = AppDispatcher.register(function(action) {
   return true;
 
 });
-
 
 module.exports = AnimalStore;

@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import AnimalBox from './AnimalBox';
 import Navbar from './Navbar';
@@ -9,7 +11,7 @@ class ShotApp extends React.Component {
         <Navbar />
         <AnimalBox url='/animals' />
       </div>
-    )
+    );
   }
 }
 
