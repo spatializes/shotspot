@@ -1,9 +1,9 @@
 'use strict';
 
-var request = require('superagent');
-var AnimalActions = require('../actions/AnimalActions');
+import request from 'superagent';
+import AnimalActions from '../actions/AnimalActions';
 
-var TIMEOUT = 10000;
+const TIMEOUT = 10000;
 
 function get(url) {
   return request

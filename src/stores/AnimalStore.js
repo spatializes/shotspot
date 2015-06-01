@@ -1,14 +1,14 @@
 'use strict';
 
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var AnimalConstants = require('../constants/AnimalConstants');
-var assign = require('object-assign');
+import {EventEmitter} from 'events';
+import AppDispatcher from '../dispatcher/AppDispatcher';
+import AnimalConstants from '../constants/AnimalConstants';
+import assign from 'object-assign';
 
-var CHANGE_EVENT = 'change';
-var ActionTypes = AnimalConstants.ActionTypes;
+const CHANGE_EVENT = 'change';
+const ActionTypes = AnimalConstants.ActionTypes;
 
-var _state = {
+let _state = {
   animals: []
 };
 
@@ -51,12 +51,10 @@ AnimalStore.appDispatch = AppDispatcher.register(function(action) {
       _persistAnimalData(action.rawAnimals);
       break;
     case ActionTypes.CREATE_ANIMAL:
-      console.log(action);
       const newAnimal = {
         name: action.text.name,
         location: action.text.location
       };
-      console.log(newAnimal);
       _state.animals.push(newAnimal);
       break;
     default:

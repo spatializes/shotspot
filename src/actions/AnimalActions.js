@@ -1,11 +1,11 @@
 'use strict';
 
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var AnimalConstants = require('../constants/AnimalConstants');
+import AppDispatcher from '../dispatcher/AppDispatcher';
+import AnimalConstants from '../constants/AnimalConstants';
 
-var ActionTypes = AnimalConstants.ActionTypes;
+const ActionTypes = AnimalConstants.ActionTypes;
 
-var AnimalActions = {
+let AnimalActions = {
 
   receiveAll: function(rawAnimals) {
     AppDispatcher.dispatch({
